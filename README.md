@@ -1,1 +1,2 @@
-# smart-goal-planner
+# SMART GOAL PLANNER
+
