@@ -11,17 +11,17 @@ Features
 
    💡 Overview Dashboard: Get a quick summary of your financial health, including:
 
-      Total number of goals.
+   Total number of goals.
 
-      Overall money saved across all goals.
+   Overall money saved across all goals.
 
-      Number of completed goals.
+   Number of completed goals.
 
-      Time remaining for each goal.
+   Time remaining for each goal.
 
-      Deadline warnings for goals approaching within 30 days that are not yet complete.
+   Deadline warnings for goals approaching within 30 days that are not yet complete.
 
-      Overdue indicators for goals whose deadlines have passed without being met.
+   Overdue indicators for goals whose deadlines have passed without being met.
 
    💾 Data Persistence: All your goal data is securely stored and managed using a local db.json file, simulated via json-server. This provides full CRUD (Create, Read, Update, Delete) functionality.
 
@@ -48,11 +48,11 @@ Installation
       git clone <your-repository-url>
       cd smart-goal-planner
       
-      If you don't have a repository yet, create the smart-goal-planner folder and navigate into it.
+   If you don't have a repository yet, create the smart-goal-planner folder and navigate into it.
 
   Initialize the project and install dependencies:
 
-      Navigate to your project directory in the terminal and run:
+   Navigate to your project directory in the terminal and run:
 
       Bash
 
@@ -65,9 +65,9 @@ Installation
   Running the Application
    You'll need to run two separate commands in two different terminal windows: one for the json-server (your "backend") and one for your frontend application.
 
-     Start json-server:
+   Start json-server:
 
-      In your project's root directory, make sure you have a db.json file. If not, create one with the example data provided in the project description:
+   In your project's root directory, make sure you have a db.json file. If not, create one with the example data provided in the project description:
 
       JSON
 
@@ -166,30 +166,30 @@ Installation
           ]
        }
       
-      Then, start json-server by running:
+   Then, start json-server by running:
 
       Bash
 
       json-server --watch db.json --port 3000
      
-     This command starts the JSON server at http://localhost:3000. You can access your goals data at http://localhost:3000/goals.
+   This command starts the JSON server at http://localhost:3000. You can access your goals data at http://localhost:3000/goals.
 
-     Start the Frontend Application:
+   Start the Frontend Application:
 
-      In a separate terminal window, navigate to your project directory and run the command to start your frontend.
+   In a separate terminal window, navigate to your project directory and run the command to start your frontend.
 
-      For simple HTML/CSS/JS (if using a local development server like Live Server):
-         Open public/index.html in your web browser, or use a tool like VS Code's "Live Server" extension to serve the public directory.
+   For simple HTML/CSS/JS (if using a local development server like Live Server):
+      Open public/index.html in your web browser, or use a tool like VS Code's "Live Server" extension to serve the public directory.
 
-      f you used create-react-app or a similar tool:
+   If you used create-react-app or a similar tool:
 
-          Bash
+      Bash
 
-          npm start
+      npm start
           
-          This will typically open your application in your browser at http://localhost:3001 (or another available port).
+   This will typically open your application in your browser at http://localhost:3001 (or another available port).
 
-    Once both servers are running, your Smart Goal Planner application should be accessible in your web browser, displaying your goals and allowing you to interact with them!
+   Once both servers are running, your Smart Goal Planner application should be accessible in your web browser, displaying your goals and allowing you to interact with them!
 
   Project Structure (Simplified)
      smart-goal-planner/
