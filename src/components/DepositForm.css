@@ -1,0 +1,15 @@
+.deposit-form-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.deposit-form-container h2 {
+  text-align: center;
+  margin-top: 0;
+  color: var(--accent-color);
+}

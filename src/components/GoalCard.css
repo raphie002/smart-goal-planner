@@ -1,0 +1,80 @@
+.goal-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.goal-card h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  font-size: 1.5em;
+}
+
+.goal-card p {
+  margin: 5px 0;
+}
+
+.deadline-status {
+  font-style: italic;
+  margin-top: 15px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+.status-completed .deadline-status {
+  background-color: #e6ffe6; /* Light green */
+  border-color: #a3e8a3;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.status-warning .deadline-status {
+  background-color: #fffbe6; /* Light yellow */
+  border-color: #ffe0b3;
+  color: #ff9800; /* Orange */
+  font-weight: bold;
+}
+
+.status-overdue .deadline-status {
+  background-color: #ffe6e6; /* Light red */
+  border-color: #ffa3a3;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+
+.goal-card-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.goal-card-actions button {
+  padding: 8px 12px;
+  font-size: 0.85em;
+}
+
+.goal-card-actions .delete-button {
+  background-color: var(--secondary-color);
+}
+
+.goal-card-actions .delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.goal-card-actions .deposit-button {
+  background-color: var(--accent-color);
+}
+
+.goal-card-actions .deposit-button:hover {
+  background-color: #1976D2;
+}
