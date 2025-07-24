@@ -26,11 +26,11 @@ Features
    💾 Data Persistence: All your goal data is securely stored and managed using a local db.json file, simulated via json-server. This provides full CRUD (Create, Read, Update, Delete) functionality.
 
 Technologies Used
-   - Frontend: HTML, CSS, JavaScript (or a framework like React/Vue/Angular - specify if you're using one!)
+   Frontend: HTML, CSS, JavaScript (or a framework like React/Vue/Angular - specify if you're using one!)
 
-  - Backend Simulation: json-server
+  Backend Simulation: json-server
 
-  - Data Storage: db.json
+  Data Storage: db.json
 
 Getting Started
 Follow these steps to get your Smart Goal Planner up and running on your local machine.
@@ -38,10 +38,10 @@ Follow these steps to get your Smart Goal Planner up and running on your local m
 Prerequisites
 You'll need Node.js and npm (Node Package Manager) installed on your system.
 
-  - Node.js & npm: Download and install from nodejs.org.
+  Node.js & npm: Download and install from nodejs.org.
 
 Installation
-  1. Clone the repository (if applicable):
+  Clone the repository (if applicable):
 
       Bash
 
@@ -50,7 +50,7 @@ Installation
       
       If you don't have a repository yet, create the smart-goal-planner folder and navigate into it.
 
-  2. Initialize the project and install dependencies:
+  Initialize the project and install dependencies:
 
       Navigate to your project directory in the terminal and run:
 
@@ -58,14 +58,14 @@ Installation
 
       npm init -y
       npm install json-server # Install json-server for the backend simulation
-      # If using a frontend framework (e.g., React):
-      # npx create-react-app . --template typescript # or --template javascript
-      # npm install # Install frontend dependencies
+      If using a frontend framework (e.g., React):
+      npx create-react-app . --template typescript # or --template javascript
+      npm install # Install frontend dependencies
   
   Running the Application
    You'll need to run two separate commands in two different terminal windows: one for the json-server (your "backend") and one for your frontend application.
 
-     1. Start json-server:
+     Start json-server:
 
       In your project's root directory, make sure you have a db.json file. If not, create one with the example data provided in the project description:
 
@@ -174,14 +174,14 @@ Installation
      
      This command starts the JSON server at http://localhost:3000. You can access your goals data at http://localhost:3000/goals.
 
-     2. Start the Frontend Application:
+     Start the Frontend Application:
 
       In a separate terminal window, navigate to your project directory and run the command to start your frontend.
 
-      - For simple HTML/CSS/JS (if using a local development server like Live Server):
-          Open public/index.html in your web browser, or use a tool like VS Code's "Live Server" extension to serve the public directory.
+      For simple HTML/CSS/JS (if using a local development server like Live Server):
+         Open public/index.html in your web browser, or use a tool like VS Code's "Live Server" extension to serve the public directory.
 
-      - If you used create-react-app or a similar tool:
+      f you used create-react-app or a similar tool:
 
           Bash
 
