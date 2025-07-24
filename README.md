@@ -191,19 +191,19 @@ Installation
 
    Once both servers are running, your Smart Goal Planner application should be accessible in your web browser, displaying your goals and allowing you to interact with them!
 
-  Project Structure (Simplified)
-     smart-goal-planner/
-      ├── public/                 # Static assets (index.html)
-      ├── src/                    # All your application's source code
-      │   ├── components/         # Reusable UI components (e.g., GoalCard, GoalForm)
-      │   ├── services/           # API interaction logic (e.g., goalService.js)
-      │   ├── utils/              # Helper functions (e.g., date calculations)
-      │   ├── App.js              # Main application logic
-      │   ├── index.js            # Entry point of the frontend application
-      │   └── index.css           # Global styles
-      ├── db.json                 # Your local database file for json-server
-      ├── package.json            # Project dependencies and scripts
-      └── README.md               # This file!
+      Project Structure (Simplified)
+        smart-goal-planner/
+           ├── public/                 # Static assets (index.html)
+           ├── src/                    # All your application's source code
+           │   ├── components/         # Reusable UI components (e.g., GoalCard, GoalForm)
+           │   ├── services/           # API interaction logic (e.g., goalService.js)
+           │   ├── utils/              # Helper functions (e.g., date calculations)
+           │   ├── App.js              # Main application logic
+           │   ├── index.js            # Entry point of the frontend application
+           │   └── index.css           # Global styles
+           ├── db.json                 # Your local database file for json-server
+           ├── package.json            # Project dependencies and scripts
+           └── README.md               # This file!
 
 Contributing
 Feel free to fork this repository, make improvements, and submit pull requests.
