@@ -1,0 +1,89 @@
+.goal-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goal-card h3 {
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+.goal-card p {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+.progress-text {
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 10px;
+}
+
+.deadline {
+  font-size: 0.9em;
+  margin-top: 10px;
+  padding: 5px 0;
+  border-radius: 4px;
+}
+
+.goal-completed {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.goal-warning {
+  color: #ffc107;
+  font-weight: bold;
+  background-color: #fff3cd;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.goal-overdue {
+  color: #dc3545;
+  font-weight: bold;
+  background-color: #f8d7da;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.card-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.card-actions button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.edit-btn {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #138496;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}

@@ -1,0 +1,27 @@
+.overview-summary {
+  background-color: #e9f5ff;
+  border: 1px solid #cce5ff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.overview-summary h3 {
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  border-bottom: 1px dashed #a0d3ff;
+  padding-bottom: 10px;
+}
+
+.overview-summary p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.overview-summary p strong {
+  color: #0056b3;
+}

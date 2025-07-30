@@ -1,0 +1,59 @@
+.goal-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.goal-form .form-group {
+  margin-bottom: 15px;
+}
+
+.goal-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.goal-form input[type="text"],
+.goal-form input[type="number"],
+.goal-form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box; /* Include padding in width */
+  font-size: 1em;
+}
+
+.goal-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.goal-form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.goal-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.goal-form .cancel-btn {
+    background-color: #6c757d;
+    color: white;
+    margin-left: 10px;
+}
+
+.goal-form .cancel-btn:hover {
+    background-color: #5a6268;
+}
