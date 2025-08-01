@@ -1,133 +1,249 @@
-# Smart Goal Planner (React App)
-This is a React-based application for managing multiple savings goals, allocating deposits, and tracking progress. It uses json-server to simulate a local REST API for data persistence, allowing for full CRUD (Create, Read, Update, Delete) functionality.
+# SMART GOAL PLANNER 
 
-Features
-Data Management & Persistence: All goal data is stored in db.json and served via json-server. The app fetches this data on startup and persists all changes back to the file.
+You’re working with a fintech company building a Smart Goal Planner. This tool allows users to manage multiple savings goals, allocate deposits across them, and track progress toward each goal.
 
-Multiple Savings Goals (CRUD):
+The application will fetch and persist all goal data from a local db.json file, simulated using json-server. This allows for full Create, Read, Update, and Delete (CRUD) functionality.
 
-Add: Create new financial goals with a name, target amount, category, and deadline.
+You’ll be building a goal management dashboard, where users can:
+Add new financial goals (e.g., “Travel Fund”, “Emergency Fund”)
+Track progress for each goal
+Make deposits to any goal
+See a full overview of all their savings activity
+CORE FEATURES
+Data Management & Persistence (via db.json and json-server)
+All goal data will be stored in a db.json file.
+json-server will be used to serve this db.json file as a REST API (e.g., http://localhost:3000/goalsLinks to an external site.).
+The application will fetch (Read) the initial list of goals from db.json upon loading.
+Multiple Savings Goals (CRUD Operations)
+Allow users to Add (Create) new financial goals. When a new goal is added, it will be persisted to db.json via a POST request.
+Allow users to Update existing goals. This includes modifying:
+                  Name
 
-Update: Modify a goal's details or saved amount.
+                   A target amount
 
-Delete: Remove existing goals from your list.
+                   Category
 
-Progress Tracking: Each goal displays its total saved amount against the target, the remaining amount needed, and a visual progress bar.
+                   Deadline to meet the goal
 
-Make Deposits: Easily add funds to any of your active goals.
+Updates will be sent to db.json via PUT or PATCH requests.
+Allow users to delete different goals. When a goal is deleted, it will be removed from db.json via a DELETE request.
+ 3. Progress Tracking
 
-Dashboard Overview: A summary section shows your total number of goals, total money saved, and the number of completed, on-track, warning (due soon), and overdue goals.
+Show:
+                   The total amount saved for each goal against the target
 
-Setup and Running the Application
-You'll need two separate terminal windows for the API server and the React development server.
+                    Remaining amount
 
-Clone or download this repository:
+                     Visual Progress bar per goal
 
-Bash
+ 4. Make Deposits (CRUD: Update savedAmount)
 
-git clone <repository-url>
-cd smart-goal-planner-react
-Install project dependencies:
+Allow users to Add an amount and select the goal to which they want to save it.
+This action will Update the savedAmount field of the correct goal in db.json via a PATCH request.
+Update the correct goal’s progress when a deposit is made.
+ 5. Overview
 
-Bash
+            Display:
 
-npm install
-Start the JSON Server (Mock API):
-Open your first terminal, navigate to the project root, and run:
+                  Total number of goals
 
-Bash
+                   Total money saved across all goals
 
-npm run start-api
-This will start json-server on http://localhost:3000, using db.json as the data source.
+                  Goals completed (if any)
 
-Start the React Development Server:
-Open your second terminal, navigate to the project root, and run:
+                   How much time is left for each goal
 
-Bash
+                  If a deadline is within 30 days and the goal is not complete, show a warning
 
-npm run dev
-This will start the React application, usually on http://localhost:5173.
+                  If the deadline has passed without reaching the goal, mark it as Overdue
 
-Once both servers are running, open your web browser and go to the React development server URL to access the Smart Goal Planner.
+db.json Structure and Example Data
+JSON
 
-Code Structure and File-by-File Breakdown
-The project is structured to separate concerns, making the code easier to manage and understand.
+{
 
-src/ - The Core React Application
-main.jsx: This is the entry point of the entire React application. It imports App.jsx and mounts it to the DOM element with the ID root in public/index.html.
+  "goals": [
 
-App.jsx: The central brain of the application.
+    {
 
-It uses React's useState hook to manage the application's state, most importantly the goals array.
+      "id": "1",
 
-It uses the useEffect hook to fetch initial goal data from the API when the component first mounts.
+      "name": "Travel Fund - Japan",
 
-It acts as a parent component, rendering all other components (GoalForm, DepositForm, Overview, and the list of **GoalCard**s).
+      "targetAmount": 5000,
 
-It contains the core logic for all CRUD operations (handleAddGoal, handleUpdateGoal, handleDeleteGoal) and passes these functions down to child components as props.
+      "savedAmount": 3200,
 
-App.css: Contains the main layout and top-level styles for the application's overall structure.
+      "category": "Travel",
 
-src/api/ - API Interaction
-goalsApi.js: A dedicated module for all API calls. This file is crucial because it isolates all network requests from the main application logic.
+      "deadline": "2025-12-31",
 
-It exports functions like fetchGoals(), addGoal(), updateGoal(), and deleteGoal().
+      "createdAt": "2024-01-15"
 
-These functions use the browser's native fetch API to make requests to the json-server endpoint (http://localhost:3000/goals).
+    },
 
-App.jsx imports and uses these functions to communicate with the backend without needing to know the low-level details of the fetch calls.
+    {
 
-src/components/ - Reusable UI Components
-GoalCard.jsx: This component renders a single goal.
+      "id": "2",
 
-It receives a goal object and callback functions like onEdit and onDelete as props from App.jsx.
+      "name": "Emergency Fund",
 
-It displays the goal's name, amounts, deadline, and a progress bar.
+      "targetAmount": 10000,
 
-The "Edit" and "Delete" buttons inside this component trigger the parent's onEdit and onDelete functions, passing up the necessary goal data.
+      "savedAmount": 7500,
 
-GoalForm.jsx: This component handles adding and editing goals.
+      "category": "Emergency",
 
-It uses useState to manage the form's input values.
+      "deadline": "2026-06-30",
 
-It receives an onSubmit prop (which is either handleAddGoal or handleUpdateGoal from App.jsx) to handle form submission.
+      "createdAt": "2023-05-01"
 
-If a goal is being edited, the initialData prop is used to pre-fill the form fields.
+    },
 
-DepositForm.jsx: A form specifically for making deposits.
+    {
 
-It receives the goals array to populate its dropdown menu.
+      "id": "3",
 
-When submitted, it calls the onMakeDeposit function prop, which is defined in App.jsx, to update a goal's savedAmount.
+      "name": "New Laptop",
 
-Overview.jsx: This component calculates and displays summary statistics.
+      "targetAmount": 1500,
 
-It receives the full goals array as a prop.
+      "savedAmount": 1500,
 
-It uses methods from utils/helpers.js to compute totals, completed goals, and other metrics.
+      "category": "Electronics",
 
-ProgressBar.jsx: A simple, reusable component to render the progress bar for each goal.
+      "deadline": "2024-07-20",
 
-src/utils/ - Helper Functions
-helpers.js: A collection of pure JavaScript functions that perform calculations and formatting.
+      "createdAt": "2024-03-10"
 
-calculateProgress(): Computes the completion percentage of a goal.
+    },
 
-getTimeRemaining(): Calculates days left until a deadline and determines if a goal is "on-track," "warning," "overdue," or "completed."
+    {
 
-How It All Connects
-When the app loads, App.jsx calls goalsApi.js to fetchGoals() and gets the initial data from db.json.
+      "id": "4",
 
-The goals data is stored in the state of App.jsx.
+      "name": "Down Payment - House",
 
-App.jsx passes this goals data down to the Overview.jsx component to display the summary and maps over the array to render a GoalCard for each goal.
+      "targetAmount": 50000,
 
-User actions, like clicking the "Delete" button on a GoalCard or submitting the GoalForm, trigger a function in App.jsx.
+      "savedAmount": 12000,
 
-This function in App.jsx then calls the appropriate method in goalsApi.js (deleteGoal(), addGoal(), or updateGoal()) to send a request to json-server.
+      "category": "Real Estate",
 
-Once the API request is successful, App.jsx updates its goals state.
+      "deadline": "2027-12-31",
 
-Because of React's architecture, this state change automatically causes all components that depend on the goals data (Overview, **GoalCard**s) to re-render with the new information, keeping the UI in sync with the data.
+      "createdAt": "2024-02-01"
 
-This setup ensures a clean separation of concerns, where components focus on rendering, and the core App component manages state and logic, all while goalsApi.js handles the communication with your data source.
+    },
+
+    {
+
+      "id": "5",
+
+      "name": "Car Maintenance",
+
+      "targetAmount": 800,
+
+      "savedAmount": 600,
+
+      "category": "Vehicle",
+
+      "deadline": "2025-09-15",
+
+      "createdAt": "2024-06-01"
+
+    },
+
+    {
+
+      "id": "6",
+
+      "name": "Education Fund",
+
+      "targetAmount": 20000,
+
+      "savedAmount": 5000,
+
+      "category": "Education",
+
+      "deadline": "2028-01-01",
+
+      "createdAt": "2024-04-20"
+
+    },
+
+    {
+
+      "id": "7",
+
+      "name": "Holiday Gifts",
+
+      "targetAmount": 1000,
+
+      "savedAmount": 200,
+
+      "category": "Shopping",
+
+      "deadline": "2024-08-10",
+
+      "createdAt": "2024-07-01"
+
+    },
+
+    {
+
+      "id": "8",
+
+      "name": "New Phone",
+
+      "targetAmount": 1200,
+
+      "savedAmount": 0,
+
+      "category": "Electronics",
+
+      "deadline": "2025-01-31",
+
+      "createdAt": "2024-07-10"
+
+    },
+
+    {
+
+      "id": "9",
+
+      "name": "Retirement Savings",
+
+      "targetAmount": 100000,
+
+      "savedAmount": 15000,
+
+      "category": "Retirement",
+
+      "deadline": "2035-01-01",
+
+      "createdAt": "2023-01-01"
+
+    },
+
+    {
+
+      "id": "10",
+
+      "name": "Home Renovation",
+
+      "targetAmount": 7500,
+
+      "savedAmount": 1000,
+
+      "category": "Home",
+
+      "deadline": "2025-03-31",
+
+      "createdAt": "2024-05-15"
+
+    }
+
+  ]
+
+}
